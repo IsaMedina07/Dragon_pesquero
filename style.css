@@ -1,0 +1,485 @@
+*,
+::after,
+::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: "Sorts Mill Goudy", serif; */
+    font-family: "Gowun Batang", serif;
+}
+
+:root{
+    
+    /* --color-primario: #4d4dff;
+    --color-segundario: #3655b3;
+    --color-claro: #d3deff;
+    --color-oscuro: #a6bcff;
+    --white-color: #E8E8E8;
+    --white-icon: #68d1fe;
+ */
+    --color-primario: #003054;
+    --color-segundario: #00557b;
+    --color-oscuro: #007ca5;
+    --color-claro: #2fa5d1;
+    --white-color: #fff;
+    --white-icon: #68d1fe;
+
+    --padding-container: 80px 0;
+
+    --transform-list-menu: translate(-100%)
+}
+
+.container{
+    width: min(90%, 1000px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.nab__logo__link{
+    width: 100px;
+    display: flex;
+}
+
+.nab__logo__link img{
+    width: 100%;
+}
+
+/* Iniciamos con el menu de navegación */
+.nav{
+
+    --nav__icon__background:url('./assets/menu.svg');
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    margin: 1rem 0;
+}
+
+.nav:has(.nav__checkbox:checked){
+    --nav__icon__background:url('./assets/close_menu.svg');
+    --transform-list-menu: translate(0%)
+}
+
+.nav__checkbox{
+    display: none;
+}
+
+.nav__label, .nab__logo__link{
+    z-index: 1;
+}
+
+.nav__label{
+    width: 36px;
+    height: 36px;
+    background-image: var(--nav__icon__background);
+    background-size: cover;
+    cursor: pointer;
+    transition: background-image .3s;
+}
+
+.nav__list{
+    position: absolute;
+    display: grid;
+    inset: 0; /* Ocupa todo el área visible */
+    place-content: center; /* Centra vertical y horizontalmente */
+    gap: 1rem;
+    list-style: none;
+    /* padding: 0; */
+    background-color: var(--white-color);
+    text-align: center;
+    
+    /* Ocultar */
+    transform: var(--transform-list-menu);
+    
+    transition: transform .4s;
+}
+
+.nav__link{
+    display: inline-block;
+    color: #000;
+    padding: .8rem .5rem;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    
+}
+
+.nav__link--cta{
+    border: 1px solid var(--color-segundario);
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    border-radius: 15px;
+}
+
+.nav__link:hover{
+    text-decoration: underline;
+}
+
+.nav__link--cta:hover{
+    text-decoration: none;
+    border: 1px solid transparent;
+    background: var(--color-primario);
+    color: var(--white-color);
+}
+
+/* Sección principal */
+.main{
+    padding: 30px 0 ;
+    display: grid;
+    gap: 1rem;
+}
+
+.carretes{
+    padding: 30px 0 ;
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: 
+    "carretes"
+    "texto";
+}
+
+.carretes__contain{
+    grid-area: carretes;
+    text-align: center;
+    background: var(--white-icon);
+    padding: 2rem 0rem;
+    border-radius: 2rem;
+}
+.text__carrete{
+    grid-area: texto;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.main-title{
+    font-size: clamp(2rem, 5vw + 1rem, 2.8rem);
+    line-height: 50px;
+    
+}
+
+.figure__main{
+    width: min(100%, 380px);
+    justify-self: center;
+}
+
+.img__main{
+    width: 100%;
+}
+
+.p__main{
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* letter-spacing: .4px; */
+}
+
+.cta__main{
+    background: var(--color-oscuro);
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 1rem 0;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.general{
+    width: 100%;
+}
+.general img{
+    width: 100%;
+}
+
+/* Sección quienes somos */
+.quienes__somos{
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    padding: 2rem 0rem;
+}
+
+.quienes__somos h2{
+    font-size: clamp(2rem, 4vw + 1rem, 2.5rem);
+    padding: 0 .35rem;
+}
+
+.quienes__somos .introduction{
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0 .3rem;
+}
+
+/* Products */
+.main__products{
+    padding: 30px 0 ;
+    display: grid;
+    gap: 1rem
+}
+
+.main__products p{
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+.figure__products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.figure__products video{
+    width: 60%;
+    border-radius: 2rem;
+}
+
+.p__products{
+    align-items: center;
+    text-align: center;
+}
+
+.p__products .contain__img img{
+    border-radius: 1rem;
+}
+
+
+.contacto{
+    display: flex;
+    width: 100%;align-items: center;
+    justify-content: center;
+}
+
+.contacto .contenedor{
+    width: 90%;
+}
+
+.contacto .contenedor .titulo{
+    margin: 40px 0;
+    text-align: center;
+    font-size: 37px;
+    font-weight: 300;
+    color: #3895EA;
+}
+
+.contacto .contenedor .formulario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contacto .contenedor .formulario input[type="text"],
+.contacto .contenedor .formulario input[type="email"],
+.contacto .contenedor .formulario textarea{
+    border: 2px solid #CECECE;
+    border-radius: 5px;
+    padding: 12px 20px;
+    color: #A4A4A4;
+    font-size: 20px;
+    outline: none;
+}
+
+.contacto .contenedor .formulario input[type="text"]:focus,
+.contacto .contenedor .formulario input[type="email"]:focus,
+.contacto .contenedor .formulario textarea:focus{
+    border: 2px solid #387bea;
+}
+
+.contacto .contenedor .formulario input[type="text"],
+.contacto .contenedor .formulario input[type="email"]{
+    width: 49%;
+    margin-bottom: 20px;
+}
+
+.contacto .contenedor .formulario textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+    max-height: 300px;
+    margin-bottom: 20px;
+}
+
+.contacto .contenedor .formulario input[type="submit"]{
+    margin: auto;
+    padding: 15px 50px;
+    font-size: 20px;
+    border: none;
+    background: #3895EA;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 300;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.contacto .contenedor .formulario input[type="submit"]:hover{
+    background: #387bea;
+}
+
+.redes{
+    background: var(--color-segundario);
+    color: var(--white-color);
+    padding-top: 60px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.redes .contenedor{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.redes svg{
+    /* background: var(--white-color); */
+    width: 40px;
+    fill: #fff;
+    border-radius: 5px;
+}
+
+
+footer .redes .contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+footer .redes .contenedor a{
+    color: #fff;
+    width: 100px;
+    display: block;
+    margin: 0 20px;
+    text-align: center;
+    font-size: 25px;
+    padding: 15px 0px;
+    border-radius: 5px;
+}
+
+
+@media (width >= 770px){
+    /* Sección principal */
+    .main{
+        padding: var(--padding-container);
+        gap: 1rem;
+        grid-template-areas: 
+        "titulo img"
+        "parrafo img"
+        "enlace img";
+        align-items: center;
+        justify-content: space-between;
+        grid-auto-columns: 50% 45%;
+    }
+
+    .quienes__somos{
+        padding: var(--padding-container);
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        grid-auto-columns: 40% 60%;
+        grid-template-areas: 
+        "img__intro title__intro"
+        "img__intro introduction";
+    }
+
+    .main__products{
+        /* padding: var(--padding-container); */
+        /* gap: 1rem; */
+        grid-template-areas: 
+        "titulo img"
+        "parrafo img"
+        "enlace img";
+        align-items: center;
+        justify-content: space-between;
+        grid-auto-columns: 50% 45%;
+        
+    }
+
+    .quienes__somos h2{grid-area: title__intro; padding: 0 2rem;}
+    .quienes__somos .introduction{grid-area: introduction; padding: 0 2rem;}
+    .quienes__somos img{grid-area: img__intro;}
+
+    .main__title{
+        grid-area: titulo;
+    }
+
+    .p__main, .p__products{
+        grid-area: parrafo;
+    }
+
+    .cta__main{
+        grid-area: enlace;
+        place-self: start;
+        padding: 1rem 2rem;
+    }
+
+    .figure__main, .figure__products{
+        grid-area: img;
+    }
+
+    .figure__products{
+        padding: 0;
+    }
+
+    .figure__products video{
+        width: 60%;
+    }
+
+    .carretes{
+        padding: 30px 0 ;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-areas: 
+        "carretes texto";
+        gap: 3rem;
+    }
+    
+    .carretes__contain{
+        grid-area: carretes;
+        text-align: center;
+    }
+    .text__carrete{
+        grid-area: texto;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .contacto{
+        padding: var(--padding-container);
+
+    }
+    
+    .contacto .contenedor{
+        width: 70%;
+    }
+
+}
+
+@media (width >= 900px){
+    /* Menu de navegación */
+    .nav{
+        --transform-list-menu: translate(0%);
+    }
+
+    .nav__label{
+        display: none;
+    }
+
+    .nav__list{
+        position: static;
+
+        grid-auto-flow: column;
+        place-content: unset;
+    }
+}
