@@ -215,7 +215,7 @@
 }
 
 .curso button{
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     padding: 1rem;
     font-size: clamp(2rem, 2vw + 1rem, 2.5rem);
