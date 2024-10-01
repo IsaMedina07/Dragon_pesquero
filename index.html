@@ -42,7 +42,7 @@
 
                     <li class="nav__element"><a href="./products.html" class="nav__link">Productos</a></li>
 
-                    <li class="nav__element"><a href="./products.html" class="nav__link">Curso</a></li>
+                    <li class="nav__element"><a href="#curso" class="nav__link">Curso</a></li>
 
                     <li class="nav__element"><a href="#contact" class="nav__link  nav__link--cta">Contacto</a></li>
 
@@ -80,6 +80,26 @@
 
         </section>
 
+        <section id="curso" class="curso">
+            <div class="description__curso">
+                <h3>Curso</h3>
+                <p>Gracias a nuestra investigación en el ámbito de la pesca deportiva, hemos notado que los
+                    pescadores buscan una herramienta interactiva que les permita mejorar continuamente. Por esto decidimos integrar una sonda de pesca a las cañas, que muestra datos en tiempo real
+                    sobre la profundidad y temperatura del agua, por ende ofreceremos un curso especializado para enseñar a los usuarios a
+                    interpretar los datos de la sonda y saber sobre las especies, sus hábitats y cómo las
+                    condiciones del agua afectan el comportamiento de estos. Con el curso buscamos crear una
+                    conexión más dinámica entre el pescador y la caña.</p>
+            </div>
+            <!-- <div class="card">
+                <div class="imagen__card">
+                    <img src="./assets/fishing-40.svg" alt="">
+                </div>
+                <h2>Nuevo curso</h2>
+            </div> -->
+            <img src="./assets/fishing-40.svg" alt="">
+            <button onclick="gracias()">Inscríbete ahora!</button>
+        </section>
+
         <section id="contact" class="contacto">
             <div class="contenedor">
                 <h3 class="titulo">Contacto</h3>
@@ -105,6 +125,9 @@
             </section>
         </footer>
 
+        <script>
+            const gracias = () => alert('¡FELICIDADES!\nGracias por tu inscripción')
+        </script>
 
 </body>
 

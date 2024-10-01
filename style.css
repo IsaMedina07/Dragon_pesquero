@@ -6,6 +6,7 @@
     box-sizing: border-box;
     /* font-family: "Sorts Mill Goudy", serif; */
     font-family: "Gowun Batang", serif;
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -194,23 +195,35 @@
     width: 100%;
 }
 
-/* Sección quienes somos */
-.quienes__somos{
+/* Sección quienes somos y curso */
+.quienes__somos, .curso{
     width: 100%;
     display: grid;
     gap: 1rem;
     padding: 2rem 0rem;
 }
 
-.quienes__somos h2{
+.quienes__somos h2, .description__curso h3{
     font-size: clamp(2rem, 4vw + 1rem, 2.5rem);
     padding: 0 .35rem;
 }
 
-.quienes__somos .introduction{
+.quienes__somos .introduction, .description__curso p{
     font-size: 1rem;
     font-weight: 600;
     padding: 0 .3rem;
+}
+
+.curso button{
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: clamp(2rem, 2vw + 1rem, 2.5rem);
+    background: var(--color-claro);
+    color: var(--white-color);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
 }
 
 /* Products */
@@ -381,7 +394,7 @@ footer .redes .contenedor a{
         grid-auto-columns: 50% 45%;
     }
 
-    .quienes__somos{
+    .quienes__somos, .curso{
         padding: var(--padding-container);
         gap: 1rem;
         align-items: center;
@@ -390,6 +403,18 @@ footer .redes .contenedor a{
         grid-template-areas: 
         "img__intro title__intro"
         "img__intro introduction";
+    }
+
+    .curso{
+        grid-auto-columns: 60% 40%;
+        grid-template-areas: 
+        "title__curso img__curso"
+        "intro__curso img__curso";
+    }
+
+    .curso button{
+        font-size: clamp(1.5rem, 0vw + 1rem, 2rem);
+
     }
 
     .main__products{
@@ -408,6 +433,10 @@ footer .redes .contenedor a{
     .quienes__somos h2{grid-area: title__intro; padding: 0 2rem;}
     .quienes__somos .introduction{grid-area: introduction; padding: 0 2rem;}
     .quienes__somos img{grid-area: img__intro;}
+
+    .description__curso h3{grid-area: title__curso; padding: 0 2rem;}
+    .description__curso p{grid-area: intro__curso; padding: 0 2rem;}
+    .curso img{grid-area: img__curso;}
 
     .main__title{
         grid-area: titulo;
